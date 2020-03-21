@@ -1,15 +1,15 @@
 <template>
 	<div id="app">
 		<div class="main-wrap">
-			<div class="navigation">
-				<NavigationBar />
+			<div class="name">
+				<NameBar />
 			</div>
 			<div class="menu-btn">
 				<MenuButton @menu-btn-clicked="toggleMobileMenu" />
 			</div>
 			<div class="main">
 				<!-- <PageTransitions> -->
-				<MenuMobile v-if="showMobileMenu" />
+				<MenuMobile v-show="showMobileMenu" />
 				<router-view />
 				<!-- </PageTransitions> -->
 			</div>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import NavigationBar from "./components/NavigationBar.vue";
+import NameBar from "./components/NameBar.vue";
 import MenuButton from "./components/MenuButton.vue";
 import MenuMobile from "./views/MenuMobile.vue";
 
@@ -27,7 +27,7 @@ import MenuMobile from "./views/MenuMobile.vue";
 export default {
 	name: "App",
 	components: {
-		NavigationBar,
+		NameBar,
 		MenuButton,
 		MenuMobile
 		// PageTransitions
@@ -100,7 +100,7 @@ button
 	grid-template-rows: 0.5rem 3rem 1fr
 	grid-template-areas: ". . ." "side-bar menu-btn ." "side-bar main ."
 
-.navigation
+.name
 	grid-area: side-bar
 	width: 100%
 .menu-btn

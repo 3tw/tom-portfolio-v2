@@ -1,30 +1,38 @@
 <template>
-	<div id="navigation-bar">
+	<div id="name-bar">
 		<div class="logo-name">
-			<span class="btn-me">To</span>	
-			<span class="btn-me">m</span>
-			<span class="btn-work">w</span>
-			<span>inkl</span>
-			<span class="btn-exhibitions">e</span>
-			<span>r</span>
+			<span class="letter-1">T</span>	
+			<span class="letter-2">o</span>	
+			<span class="letter-3 btn-me">m</span>
+			<span class="letter-4 btn-work">w</span>
+			<span class="letter-5">i</span>	
+			<span class="letter-6">n</span>	
+			<span class="letter-7">k</span>	
+			<span class="letter-8">l</span>	
+			<span class="letter-9 btn-exhibitions">e</span>
+			<span class="letter-10">r</span>	
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
-	name: "NavigationBar"
+	name: "NameBar"
 };
 </script>
 
 <style scoped lang="sass">
-#navigation-bar
+#name-bar
 	display: inline-block
 	width: 100%
 .logo-name
+	display: grid
+	grid-auto-rows: 3rem
+	align-items: baseline
+	
 	text-align: right
-	writing-mode: vertical-rl
-	text-orientation: upright
+	// writing-mode: vertical-rl
+	// text-orientation: upright
 	cursor: pointer
 	border: none
 	outline: inherit
@@ -40,8 +48,9 @@ export default {
 	-webkit-text-fill-color: transparent
 	margin: 0
 	padding: 0
-	width: 100%
-	
+	width: 100%	
+	span
+		height: 100%
 	
 	
 // #navigation-bar .router-link-exact-active
