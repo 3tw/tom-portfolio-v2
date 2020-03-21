@@ -1,64 +1,111 @@
 <template>
 	<div id="app">
-		<div class="navigation-bar">
-			<NavigationBar />
-		</div>
-		<div class="main">
-			<!-- <PageTransitions> -->
+		<div class="main-wrap">
+			<div class="navigation">
+				<NavigationBar />
+			</div>
+			<div class="menu-btn">
+				<MenuButton @menu-btn-clicked="toggleMobileMenu" />
+			</div>
+			<div class="main">
+				<!-- <PageTransitions> -->
+				<MenuMobile v-if="showMobileMenu" />
 				<router-view />
-			<!-- </PageTransitions> -->
+				<!-- </PageTransitions> -->
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
 import NavigationBar from "./components/NavigationBar.vue";
+import MenuButton from "./components/MenuButton.vue";
+import MenuMobile from "./views/MenuMobile.vue";
+
 // import PageTransitions from "./components/PageTransitions.vue";
 
 export default {
 	name: "App",
 	components: {
 		NavigationBar,
+		MenuButton,
+		MenuMobile
 		// PageTransitions
+	},
+	data() {
+		return {
+			showMobileMenu: false
+		}
+	},
+	methods: {
+		toggleMobileMenu () {
+			if (this.showMobileMenu == false) {
+				this.showMobileMenu = true
+			} 
+			else {
+				this.showMobileMenu = false
+			}
+		}
 	}
 };
 </script>
 
 <style lang="sass">
-@import url('https://fonts.googleapis.com/css?family=Lato:300&display=swap')
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&display=swap')
+// Google fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:300,900&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap')
+// url('https://fonts.googleapis.com/css?family=Work+Sans:400&display=swap')
 
 // Core CSS
 *
 	box-sizing: border-box
 	margin: 0
 	padding: 0
+	&:focus
+		outline: none
 
 html
 	font-size: 1em
-	min-height: 100%
-
 body
 	font-family: 'Source Sans pro', sans-serif
-	line-height: 1.4rem
+	line-height: 1.3rem
 	min-width: 320px
 	height: 100vh
 	overflow-x: hidden
-	margin: 0
 	padding: 0
-	
-a
+
+a,
+button
 	text-decoration: none
+	&:focus,
+	&::-moz-focus-inner
+		border: none
+		outline: none
+// button	
+// 	text-decoration: none
+// 	&:focus,
+// 	&::-moz-focus-inner
+// 		border: none
+// 		outline: none
+
 
 // Main layout	
 #app
 	height: 100%
-	display: flex
-	flex-direction: row
+.main-wrap
+	height: 100%
+	display: grid
+	grid-template-columns: 4rem 1fr 2rem
+	grid-template-rows: 0.5rem 3rem 1fr
+	grid-template-areas: ". . ." "side-bar menu-btn ." "side-bar main ."
 
-.navigation-bar
-	flex: 0 0 6rem
-
+.navigation
+	grid-area: side-bar
+	width: 100%
+.menu-btn
+	grid-area: menu-btn
+	justify-self: flex-end
 .main
-	flex: 1 0 calc(100vw - 6rem)
+	grid-area: main
 </style>
