@@ -1,23 +1,36 @@
 <template>
 	<div id="name-bar">
+
 		<div class="logo-name">
-			<span class="letter-1"><router-link class="router-link" id="home" to="/">T</router-link></span>	
-			<span class="letter-2">o</span>	
+			<span class="letter-1"><router-link class="router-link" id="home" to="/">T</router-link></span>
+			<span class="letter-2"><MenuTransition><div v-show="!menuShown">o</div></MenuTransition></span>	
 			<span class="letter-3 btn-me">m</span>
 			<span class="letter-4 btn-work">w</span>
-			<span class="letter-5">i</span>	
-			<span class="letter-6">n</span>	
-			<span class="letter-7">k</span>	
-			<span class="letter-8">l</span>	
+			<span class="letter-5"><MenuTransition><div v-show="!menuShown">i</div></MenuTransition></span>	
+			<span class="letter-6"><MenuTransition><div v-show="!menuShown">n</div></MenuTransition></span>	
+			<span class="letter-7"><MenuTransition><div v-show="!menuShown">k</div></MenuTransition></span>	
+			<span class="letter-8"><MenuTransition><div v-show="!menuShown">l</div></MenuTransition></span>	
 			<span class="letter-9 btn-exhibitions">e</span>
-			<span class="letter-10">r</span>	
+			<span class="letter-10"><MenuTransition><div v-show="!menuShown">r</div></MenuTransition></span>	
+			
 		</div>
 	</div>
 </template>
 
 <script>
+import MenuTransition from "./MenuTransition.vue"
+
 export default {
-	name: "NameBar"
+	name: "NameBar",
+	components: {
+		MenuTransition
+	},
+	props: {
+		menuShown: {
+			type:Boolean,
+			default: false
+		}
+	}
 };
 </script>
 

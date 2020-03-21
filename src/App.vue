@@ -2,7 +2,7 @@
 	<div id="app">
 		<div class="main-wrap">
 			<div class="name">
-				<NameBar />
+				<NameBar :menuShown="menuStatus" />
 			</div>
 			<div class="menu-btn">
 				<MenuButton @menu-btn-clicked="toggleMobileMenu" />
@@ -11,7 +11,7 @@
 				<MenuTransition>
 					<MenuMobile v-show="showMobileMenu" />
 				</MenuTransition>
-				
+
 				<PageTransitions>
 					<router-view />
 				</PageTransitions>
@@ -25,7 +25,7 @@ import NameBar from "./components/NameBar.vue";
 import MenuButton from "./components/MenuButton.vue";
 import MenuMobile from "./views/MenuMobile.vue";
 import PageTransitions from "./components/PageTransitions.vue";
-import MenuTransition from "./components/MenuTransition.vue"
+import MenuTransition from "./components/MenuTransition.vue";
 
 export default {
 	name: "App",
@@ -39,15 +39,23 @@ export default {
 	data() {
 		return {
 			showMobileMenu: false
-		}
+		};
 	},
 	methods: {
-		toggleMobileMenu () {
+		toggleMobileMenu() {
 			if (this.showMobileMenu == false) {
-				this.showMobileMenu = true
-			} 
-			else {
-				this.showMobileMenu = false
+				this.showMobileMenu = true;
+			} else {
+				this.showMobileMenu = false;
+			}
+		}
+	},
+	computed: {
+		menuStatus() {
+			if (this.showMobileMenu == false) {
+				return false;
+			} else {
+				return true;
 			}
 		}
 	}
@@ -92,7 +100,6 @@ button
 // 	&::-moz-focus-inner
 // 		border: none
 // 		outline: none
-
 
 // Main layout	
 #app
