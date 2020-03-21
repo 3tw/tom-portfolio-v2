@@ -2,18 +2,18 @@
 	<div id="app">
 		<div class="main-wrap">
 			<div class="name">
-				<NameBar :menuShown="menuStatus" />
+				<NameBar :showLetter="showLetter" :currentRoute="currentRoute" />
 			</div>
 			<div class="menu-btn">
 				<MenuButton @menu-btn-clicked="toggleMobileMenu" />
 			</div>
 			<div class="main">
 				<MenuTransition>
-					<MenuMobile v-show="showMobileMenu" />
+					<MenuMobile v-show="showMobileMenu" :currentRoute="currentRoute" />
 				</MenuTransition>
 
 				<PageTransitions>
-					<router-view />
+					<router-view v-show="!showMobileMenu"/>
 				</PageTransitions>
 			</div>
 		</div>
@@ -38,8 +38,15 @@ export default {
 	},
 	data() {
 		return {
-			showMobileMenu: false
+			showMobileMenu: false,
+			route:""
 		};
+	},
+	created() {
+		this.$router.beforeEach((to, from, next) => {
+				this.showMobileMenu = false
+				next();
+		})
 	},
 	methods: {
 		toggleMobileMenu() {
@@ -48,17 +55,21 @@ export default {
 			} else {
 				this.showMobileMenu = false;
 			}
-		}
+		},
 	},
 	computed: {
-		menuStatus() {
+		showLetter() {
 			if (this.showMobileMenu == false) {
-				return false;
-			} else {
 				return true;
+			} else {
+				return false;
 			}
+		},
+		currentRoute() {
+			return this.$route.name;
 		}
-	}
+
+	},
 };
 </script>
 

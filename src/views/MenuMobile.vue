@@ -1,8 +1,8 @@
 <template>
 	<div id="menu-mobile">
-		<router-link class="router-link" id="about" to="/about">{{about}}</router-link>
-		<router-link class="router-link" id="work" to="/work">{{work}}</router-link>
-		<router-link class="router-link" id="exhibitions" to="/exhibitions">{{exhibitions}}</router-link>
+		<router-link class="router-link" id="about" to="/about" v-show="showAbout">{{about}}</router-link>
+		<router-link class="router-link" id="work" to="/work" v-show="showWork">{{work}}</router-link>
+		<router-link class="router-link" id="exhibitions" to="/exhibitions" v-show="showExhibitions">{{exhibitions}}</router-link>
 	</div>
 </template>
 
@@ -14,6 +14,29 @@ export default {
 			exhibitions: "xhibit",
 			work: "ork",
 			about: "e"
+		}
+	},
+	props: {
+		currentRoute: {
+			type: String,
+			default: ""
+		}
+	},
+	computed: {
+		showAbout() {
+			if (this.currentRoute == "About") {
+				return false
+			} else { return true}
+		},
+		showWork() {
+			if (this.currentRoute == "Work") {
+				return false
+			} else { return true}
+		},
+		showExhibitions() {
+			if (this.currentRoute == "Exhibitions") {
+				return false
+			} else { return true}
 		}
 	}
 };
