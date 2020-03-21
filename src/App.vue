@@ -8,12 +8,12 @@
 				<MenuButton @menu-btn-clicked="toggleMobileMenu" />
 			</div>
 			<div class="main">
-				<MenuTransition>
+				<!-- <MenuTransition>
 					<MenuMobile v-show="showMobileMenu" :currentRoute="currentRoute" />
-				</MenuTransition>
+				</MenuTransition> -->
 
 				<PageTransitions>
-					<router-view v-show="!showMobileMenu"/>
+					<router-view />
 				</PageTransitions>
 			</div>
 		</div>
@@ -23,18 +23,18 @@
 <script>
 import NameBar from "./components/NameBar.vue";
 import MenuButton from "./components/MenuButton.vue";
-import MenuMobile from "./views/MenuMobile.vue";
+// import MenuMobile from "./views/MenuMobile.vue";
 import PageTransitions from "./components/PageTransitions.vue";
-import MenuTransition from "./components/MenuTransition.vue";
+// import MenuTransition from "./components/MenuTransition.vue";
 
 export default {
 	name: "App",
 	components: {
 		NameBar,
 		MenuButton,
-		MenuMobile,
+		// MenuMobile,
 		PageTransitions,
-		MenuTransition
+		// MenuTransition
 	},
 	data() {
 		return {
