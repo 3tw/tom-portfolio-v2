@@ -4,13 +4,13 @@
 		<div class="logo-name">
 			<span class="letter-1"><router-link class="router-link" id="home" to="/">T</router-link></span>
 			<span class="letter-2"><MenuTransition><div v-show="showLetter">o</div></MenuTransition></span>	
-			<span class="letter-3 btn-me"><MenuTransition><div v-show="showAbout">m</div></MenuTransition></span>
-			<span class="letter-4 btn-work"><MenuTransition><div v-show="showWork">w</div></MenuTransition></span>
+			<span class="letter-3 btn-me">m</span>
+			<span class="letter-4 btn-work">w</span>
 			<span class="letter-5"><MenuTransition><div v-show="showLetter">i</div></MenuTransition></span>	
 			<span class="letter-6"><MenuTransition><div v-show="showLetter">n</div></MenuTransition></span>	
 			<span class="letter-7"><MenuTransition><div v-show="showLetter">k</div></MenuTransition></span>	
 			<span class="letter-8"><MenuTransition><div v-show="showLetter">l</div></MenuTransition></span>	
-			<span class="letter-9 btn-exhibitions"><MenuTransition><div v-show="showWork">i</div></MenuTransition></span>
+			<span class="letter-9 btn-exhibitions">e</span>
 			<span class="letter-10"><MenuTransition><div v-show="showLetter">r</div></MenuTransition></span>	
 			
 		</div>
@@ -29,27 +29,6 @@ export default {
 		showLetter: {
 			type:Boolean,
 			default: true
-		},
-		currentRoute: {
-			type: String,
-			default: ""
-		}
-	},
-	computed: {
-		showAbout() {
-			if (this.currentRoute == "About" && this.showLetter == false) {
-				return false
-			} else { return true}
-		},
-		showWork() {
-			if (this.currentRoute == "Work" && this.showLetter == false) {
-				return false
-			} else { return true}
-		},
-		showExhibitions() {
-			if (this.currentRoute == "Exhibitions" && this.showLetter == false) {
-				return false
-			} else { return true}
 		}
 	}
 };

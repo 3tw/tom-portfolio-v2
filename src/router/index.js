@@ -9,7 +9,7 @@ const routes = [
 		path: "/",
 		name: "Home",
 		component: Home,
-		meta: { transitionType: 'slide' }
+		meta: { transitionType: 'slifadede' }
 	},
 	{
 		path: "/about",

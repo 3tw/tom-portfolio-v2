@@ -2,16 +2,12 @@
 	<div id="app">
 		<div class="main-wrap">
 			<div class="name">
-				<NameBar :showLetter="showLetter" :currentRoute="currentRoute" />
+				<NameBar :showLetter="showLetter" />
 			</div>
 			<div class="menu-btn">
-				<MenuButton @menu-btn-clicked="toggleMobileMenu" />
+				<MenuButton :menuIsOpen="menuIsOpen" />
 			</div>
 			<div class="main">
-				<!-- <MenuTransition>
-					<MenuMobile v-show="showMobileMenu" :currentRoute="currentRoute" />
-				</MenuTransition> -->
-
 				<PageTransitions>
 					<router-view />
 				</PageTransitions>
@@ -23,52 +19,42 @@
 <script>
 import NameBar from "./components/NameBar.vue";
 import MenuButton from "./components/MenuButton.vue";
-// import MenuMobile from "./views/MenuMobile.vue";
 import PageTransitions from "./components/PageTransitions.vue";
-// import MenuTransition from "./components/MenuTransition.vue";
 
 export default {
 	name: "App",
 	components: {
 		NameBar,
 		MenuButton,
-		// MenuMobile,
 		PageTransitions,
-		// MenuTransition
 	},
 	data() {
 		return {
-			showMobileMenu: false,
-			route:""
+			menuIsOpen: false
 		};
 	},
 	created() {
 		this.$router.beforeEach((to, from, next) => {
-				this.showMobileMenu = false
+				if (to.path == "/menu") {
+					this.menuIsOpen = true
+				} 
+				else {
+					this.menuIsOpen = false
+				}
 				next();
 		})
 	},
-	methods: {
-		toggleMobileMenu() {
-			if (this.showMobileMenu == false) {
-				this.showMobileMenu = true;
-			} else {
-				this.showMobileMenu = false;
-			}
-		},
-	},
 	computed: {
 		showLetter() {
-			if (this.showMobileMenu == false) {
-				return true;
-			} else {
+			if (this.currentRoute == "MenuMobile") {
 				return false;
+			} else {
+				return true;
 			}
 		},
 		currentRoute() {
 			return this.$route.name;
 		}
-
 	},
 };
 </script>

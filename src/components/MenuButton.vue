@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<!-- <button id="menu-btn" @click="menuBtnClick">more</button> -->
-		<router-link class="router-link" id="menu-btn" to="/menu" >more</router-link>
+		<router-link class="router-link" id="menu-btn" to="/menu" v-if="!menuIsOpen">{{moreButton}}</router-link>
+		<router-link class="router-link" id="menu-btn" to="/" v-if="menuIsOpen">{{lessButton}}</router-link>
 	</div>
 </template>
 
@@ -10,11 +10,14 @@ export default {
 	name: "MenuButton",
 	data() {
 		return {
+			moreButton: "more",
+			lessButton: "or less"
 		}
 	},
-	methods: {
-		menuBtnClick() {
-			this.$emit("menu-btn-clicked")
+	props: {
+		menuIsOpen: {
+			type: Boolean,
+			default: false
 		}
 	}
 };
