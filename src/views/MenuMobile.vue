@@ -1,20 +1,27 @@
 <template>
-	<div id="menu-mobile">
-		<router-link class="router-link" id="about" to="/about" v-show="showAbout">{{about}}</router-link>
-		<router-link class="router-link" id="work" to="/work" v-show="showWork">{{work}}</router-link>
-		<router-link class="router-link" id="exhibitions" to="/exhibitions" v-show="showExhibitions">{{exhibitions}}</router-link>
+	<div id="menu-container">
+		<div class="menu-mobile">
+			<router-link class="router-link" id="about" to="/about" v-show="showAbout">{{about}}</router-link>
+			<router-link class="router-link" id="work" to="/work" v-show="showWork">{{work}}</router-link>
+			<router-link
+				class="router-link"
+				id="exhibitions"
+				to="/exhibitions"
+				v-show="showExhibitions"
+			>{{exhibitions}}</router-link>
+		</div>
 	</div>
 </template>
 
 <script>
 export default {
 	name: "MenuMobile",
-	data() { 
+	data() {
 		return {
 			exhibitions: "xhibit",
 			work: "ork",
 			about: "e"
-		}
+		};
 	},
 	props: {
 		currentRoute: {
@@ -25,31 +32,41 @@ export default {
 	computed: {
 		showAbout() {
 			if (this.currentRoute == "About") {
-				return false
-			} else { return true}
+				return false;
+			} else {
+				return true;
+			}
 		},
 		showWork() {
 			if (this.currentRoute == "Work") {
-				return false
-			} else { return true}
+				return false;
+			} else {
+				return true;
+			}
 		},
 		showExhibitions() {
 			if (this.currentRoute == "Exhibitions") {
-				return false
-			} else { return true}
+				return false;
+			} else {
+				return true;
+			}
 		}
 	}
 };
 </script>
 
 <style scoped lang="sass">
-#menu-mobile
+#menu-container
+	display: inline-block
+	width: 100%
+.menu-mobile
 	display: grid
 	grid-auto-rows: 3rem
 	align-items: baseline
 	padding: 0 0 0 1px
 .router-link
 	display: block
+	width: min-content
 	border: none
 	font: inherit
 	cursor: pointer
@@ -64,6 +81,9 @@ export default {
 	-webkit-text-stroke-width: 2px
 	-webkit-text-stroke-color: $clr-btn
 	-webkit-text-fill-color: transparent
+	&:hover
+		-webkit-text-stroke-color: transparent
+		-webkit-text-fill-color: $clr-hover
 
 #about
 	grid-row: 2/3
@@ -71,11 +91,25 @@ export default {
 	grid-row: 3/4
 #exhibitions
 	grid-row: 8/9
-
 	
-// #navigation-bar .router-link-exact-active
-// 	color: #ffffff
-// #navigation-bar .router-link-active#about,
-// #navigation-bar .router-link-active#projects
-// 	color: #ffffff
+@media screen and (min-width: 720px)
+	#menu-container .menu-mobile
+		grid-auto-columns: 3rem
+		grid-template-rows: 1fr
+		grid-auto-rows: 0
+		padding: 0
+	#about
+		grid-column: 3/4
+	#work
+		grid-column: 4/5
+	#exhibitions
+		grid-column: 9/10
+	#about,
+	#work,
+	#exhibitions
+		grid-row: 1/2
+		justify-self: center
+		writing-mode: vertical-rl
+		text-orientation: upright
+		letter-spacing: -10px
 </style>

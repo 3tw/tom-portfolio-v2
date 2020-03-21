@@ -18,14 +18,10 @@
 
 <script>
 export default {
-	name: "SideBar"
+	name: "About"
 };
 </script>
 
 <style scoped lang="sass">
-.about
-	font-size: 1.3rem
-	line-height: 1.9rem
-	padding-left: 2rem
 	
 </style>

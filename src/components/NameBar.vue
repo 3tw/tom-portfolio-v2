@@ -1,6 +1,5 @@
 <template>
 	<div id="name-bar">
-
 		<div class="logo-name">
 			<span class="letter-1"><router-link class="router-link" id="home" to="/">T</router-link></span>
 			<span class="letter-2"><MenuTransition><div v-show="showLetter">o</div></MenuTransition></span>	
@@ -62,11 +61,22 @@ export default {
 	width: 100%	
 	span
 		height: 100%
-	
-	
-// #navigation-bar .router-link-exact-active
-// 	color: #ffffff
-// #navigation-bar .router-link-active#about,
-// #navigation-bar .router-link-active#projects
-// 	color: #ffffff
+		cursor: default
+		
+@media screen and (min-width: 720px)
+	.logo-name
+		grid-template-rows: 3rem
+		grid-auto-columns: 3rem
+		text-align: center
+	.letter-1,
+	.letter-2,
+	.letter-3,
+	.letter-4,
+	.letter-5,
+	.letter-6,
+	.letter-7,
+	.letter-8,
+	.letter-9,
+	.letter-10
+		grid-row: 1/2
 </style>

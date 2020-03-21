@@ -10,7 +10,7 @@ const routes = [
 		name: "Home",
 		component: Home,
 		props: true,
-		meta: { transitionType: 'slifadede' }
+		meta: { transitionType: 'fade' }
 	},
 	{
 		path: "/about",
@@ -22,11 +22,20 @@ const routes = [
 		meta: { transitionType: 'slide' }
 	},
 	{
+		path: "/work",
+		name: "WorkLinks",
+		component: () => import(/* webpackChunkName: "about" */ "../views/WorkLinks.vue"),
+		meta: { transitionType: 'slide' }
+	},
+	{
+		path: "/exhibitions",
+		name: "ExhibitionsLinks",
+		component: () => import(/* webpackChunkName: "about" */ "../views/ExhibitionsLinks.vue"),
+		meta: { transitionType: 'slide' }
+	},
+	{
 		path: "/menu",
 		name: "MenuMobile",
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
 		component: () => import(/* webpackChunkName: "about" */ "../views/MenuMobile.vue"),
 		meta: { transitionType: 'fade' }
 	}

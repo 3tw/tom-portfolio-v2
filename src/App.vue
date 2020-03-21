@@ -104,16 +104,40 @@ button
 	height: 100%
 	display: grid
 	grid-template-columns: 3rem 1fr 2rem
-	grid-template-rows: 0.5rem 3rem 1fr
-	grid-template-areas: ". . ." "side-bar menu-btn ." "side-bar main ."
+	grid-template-rows: 0.5rem 3rem 3rem 1fr
+	grid-template-areas: ". . ." "side-bar menu-btn ." "side-bar main ." "side-bar main ."
 
 .name
 	grid-area: side-bar
-	width: 100%
 .menu-btn
 	grid-area: menu-btn
 	justify-self: flex-end
 .main
 	grid-area: main
 	
+// Views layout
+.about
+	font-size: 1.3rem
+	line-height: 1.9rem
+	padding-left: 2rem
+.work,
+.exhibitions
+	font-size: 1.5rem
+	line-height: 1.9rem
+	padding-left: 2rem
+	
+@media screen and (min-width: 720px)
+	#app .main-wrap
+		grid-template-areas: ". . ." ". side-bar menu-btn" ". main menu-btn" ". main ."
+	.main-wrap .menu-btn
+		transform: rotate(-90deg)
+	.about
+		font-size: 1.4rem
+		line-height: 2rem
+		padding: 1rem 0 0 2rem
+	.work,
+	.exhibitions
+		font-size: 1.5rem
+		line-height: 2.2rem
+		padding: 1rem 0 0 2rem
 </style>
