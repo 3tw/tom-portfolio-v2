@@ -9,6 +9,7 @@ const routes = [
 		path: "/",
 		name: "Home",
 		component: Home,
+		props: true,
 		meta: { transitionType: 'slifadede' }
 	},
 	{

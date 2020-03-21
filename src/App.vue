@@ -2,10 +2,10 @@
 	<div id="app">
 		<div class="main-wrap">
 			<div class="name">
-				<NameBar :showLetter="showLetter" />
+				<NameBar :showLetter=showLetter />
 			</div>
 			<div class="menu-btn">
-				<MenuButton :menuIsOpen="menuIsOpen" />
+				<MenuButton :menuIsOpen=menuIsOpen :previousRoute=previousRoute />
 			</div>
 			<div class="main">
 				<PageTransitions>
@@ -30,13 +30,15 @@ export default {
 	},
 	data() {
 		return {
-			menuIsOpen: false
+			menuIsOpen: false,
+			previousRoute: "/"
 		};
 	},
 	created() {
 		this.$router.beforeEach((to, from, next) => {
 				if (to.path == "/menu") {
 					this.menuIsOpen = true
+					this.previousRoute = from.path
 				} 
 				else {
 					this.menuIsOpen = false

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<router-link class="router-link" id="menu-btn" to="/menu" v-if="!menuIsOpen">{{moreButton}}</router-link>
-		<router-link class="router-link" id="menu-btn" to="/" v-if="menuIsOpen">{{lessButton}}</router-link>
+		<router-link class="router-link" id="menu-btn" :to="previousRoute" v-if="menuIsOpen">{{lessButton}}</router-link>
 	</div>
 </template>
 
@@ -18,6 +18,10 @@ export default {
 		menuIsOpen: {
 			type: Boolean,
 			default: false
+		},
+		previousRoute: {
+			type: String,
+			default: "/"
 		}
 	}
 };
