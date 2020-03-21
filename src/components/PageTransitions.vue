@@ -27,7 +27,7 @@ export default {
 				const toDepth = to.path.split("/").length;
 				const fromDepth = from.path.split("/").length;
 				transitionType =
-					toDepth < fromDepth ? "slide-left" : "slide-right";
+					toDepth < fromDepth ? "slide-right" : "slide-left";
 				this.transitionType = transitionType || DEFAULT_TRANSITION_TYPE;
 			} else {
 				this.transitionType = DEFAULT_TRANSITION_TYPE;

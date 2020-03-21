@@ -36,7 +36,7 @@ export default {
 	font-weight: 300
 	line-height: 2rem
 	background-color: transparent
-	color: black
+	color: $clr-btn
 	cursor: pointer
 
 </style>

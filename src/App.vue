@@ -39,7 +39,7 @@ export default {
 				if (to.path == "/menu") {
 					this.menuIsOpen = true
 					this.previousRoute = from.path
-				} 
+				}
 				else {
 					this.menuIsOpen = false
 				}
@@ -48,14 +48,15 @@ export default {
 	},
 	computed: {
 		showLetter() {
-			if (this.currentRoute == "MenuMobile") {
+			if (this.currentRoute == "/menu") {
 				return false;
 			} else {
 				return true;
 			}
 		},
 		currentRoute() {
-			return this.$route.name;
+			console.log(this.$route)
+			return this.$route.path;
 		}
 	},
 };
@@ -81,6 +82,7 @@ html
 body
 	font-family: 'Source Sans pro', sans-serif
 	line-height: 1.3rem
+	color: $clr-txt
 	min-width: 320px
 	height: 100vh
 	overflow-x: hidden
@@ -89,24 +91,19 @@ body
 a,
 button
 	text-decoration: none
+	color: $clr-txt
 	&:focus,
 	&::-moz-focus-inner
 		border: none
 		outline: none
-// button	
-// 	text-decoration: none
-// 	&:focus,
-// 	&::-moz-focus-inner
-// 		border: none
-// 		outline: none
-
+		
 // Main layout	
 #app
 	height: 100%
 .main-wrap
 	height: 100%
 	display: grid
-	grid-template-columns: 4rem 1fr 2rem
+	grid-template-columns: 3rem 1fr 2rem
 	grid-template-rows: 0.5rem 3rem 1fr
 	grid-template-areas: ". . ." "side-bar menu-btn ." "side-bar main ."
 
@@ -118,4 +115,5 @@ button
 	justify-self: flex-end
 .main
 	grid-area: main
+	
 </style>

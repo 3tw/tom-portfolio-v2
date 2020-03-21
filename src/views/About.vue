@@ -2,11 +2,11 @@
 	<div class="about">
 		<span>
 			1996 &nbsp; Slovenia
-			<br />2015 &nbsp; Stone Design - Higher
+			<br />2015 &nbsp; Stone Design, Higher
 			Vocational College, Sežana
-			<br />2017 &nbsp; Sculpture - Academy of Fine
+			<br />2017 &nbsp; Sculpture, Academy of Fine
 			Arts and Design, Ljubljana
-			<br />2019 &nbsp; Sculpture - Faculty of Fine
+			<br />2019 &nbsp; Sculpture, Faculty of Fine
 			Arts, Belgrade
 		</span>
 		<br />
@@ -23,5 +23,9 @@ export default {
 </script>
 
 <style scoped lang="sass">
-
+.about
+	font-size: 1.3rem
+	line-height: 1.9rem
+	padding-left: 2rem
+	
 </style>

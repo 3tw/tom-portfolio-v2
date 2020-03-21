@@ -62,7 +62,7 @@ export default {
 	line-height: 3.2rem
 	font-weight: 400
 	-webkit-text-stroke-width: 2px
-	-webkit-text-stroke-color: black
+	-webkit-text-stroke-color: $clr-btn
 	-webkit-text-fill-color: transparent
 
 #about

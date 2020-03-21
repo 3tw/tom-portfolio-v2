@@ -36,4 +36,5 @@ const router = new VueRouter({
 	routes
 });
 
+router.replace({ path: '*', redirect: '/' }) //try replacing with manifest.json
 export default router;

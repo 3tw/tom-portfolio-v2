@@ -44,8 +44,6 @@ export default {
 	align-items: baseline
 	
 	text-align: right
-	// writing-mode: vertical-rl
-	// text-orientation: upright
 	cursor: pointer
 	border: none
 	outline: inherit
@@ -57,7 +55,7 @@ export default {
 	line-height: 3.2rem
 	font-weight: 400
 	-webkit-text-stroke-width: 2px
-	-webkit-text-stroke-color: black
+	-webkit-text-stroke-color: $clr-btn
 	-webkit-text-fill-color: transparent
 	margin: 0
 	padding: 0
