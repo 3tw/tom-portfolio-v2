@@ -1,7 +1,7 @@
 <template>
 	<div id="name-bar">
 		<div class="logo-name">
-			<span class="letter-1">T</span>	
+			<span class="letter-1"><router-link class="router-link" id="home" to="/">T</router-link></span>	
 			<span class="letter-2">o</span>	
 			<span class="letter-3 btn-me">m</span>
 			<span class="letter-4 btn-work">w</span>
