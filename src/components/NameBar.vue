@@ -41,9 +41,12 @@ export default {
 	display: grid
 	grid-auto-rows: 3rem
 	align-items: baseline
+	width: 100%	
+	margin: 0
+	padding: 0
 	
-	text-align: right
 	cursor: pointer
+	text-align: right
 	border: none
 	outline: inherit
 	text-decoration: none
@@ -55,15 +58,11 @@ export default {
 	-webkit-text-stroke-width: 2px
 	-webkit-text-stroke-color: $clr-btn
 	-webkit-text-fill-color: transparent
-	margin: 0
-	padding: 0
-	width: 100%	
 	span
+		width: 100%
 		height: 100%
+		align-self: center
 		cursor: default
-.letter-1 .router-link
-	-webkit-text-fill-color: transparent
-	-webkit-text-stroke-color: $clr-btn
 	
 .letter-1,
 .letter-3,
@@ -72,6 +71,9 @@ export default {
 	&:hover
 		-webkit-text-stroke-color: transparent
 		-webkit-text-fill-color: $clr-hover
+.letter-1 .router-link
+	-webkit-text-fill-color: transparent
+	-webkit-text-stroke-color: $clr-btn
 		
 @media screen and (min-width: 720px)
 	.logo-name
@@ -91,6 +93,10 @@ export default {
 	.letter-9,
 	.letter-10
 		grid-row: 1/2
+		
+	.router-link
+		display: inline-block
+		width: 100%
 @media screen and (min-width: 1024px)
 	.logo-name
 		grid-template-rows: 4rem

@@ -1,14 +1,13 @@
 <template>
 	<div id="menu-container">
 		<div class="menu-mobile">
-			<router-link class="router-link" id="about" :to="{ name: 'About' }" v-show="showAbout">{{about}}</router-link>
-			<router-link class="router-link" id="work" :to="{ name: 'MenuWork' }" v-show="showWork">{{work}}</router-link>
-			<router-link
+			<span id="about"><router-link class="router-link" :to="{ name: 'About' }" v-show="showAbout">{{about}}</router-link></span>
+			<span id="work"><router-link class="router-link" :to="{ name: 'MenuWork' }" v-show="showWork">{{work}}</router-link></span>
+			<span id="exhibitions"><router-link
 				class="router-link"
-				id="exhibitions"
 				:to="{ name: 'MenuExhibitions' }"
 				v-show="showExhibitions"
-			>{{exhibitions}}</router-link>
+			>{{exhibitions}}</router-link></span>
 		</div>
 	</div>
 </template>
@@ -75,14 +74,13 @@ export default {
 .menu-mobile
 	display: grid
 	grid-auto-rows: 3rem
-	align-items: baseline
 	padding: 0 0 0 1px
-.router-link
-	display: block
-	width: min-content
+	align-items: baseline
+	width: 100%	
+	
+	cursor: default
+	text-align: left
 	border: none
-	font: inherit
-	cursor: pointer
 	outline: inherit
 	text-decoration: none
 	text-transform: uppercase
@@ -93,9 +91,14 @@ export default {
 	-webkit-text-stroke-width: 2px
 	-webkit-text-stroke-color: $clr-btn
 	-webkit-text-fill-color: transparent
-	&:hover
-		-webkit-text-stroke-color: transparent
-		-webkit-text-fill-color: $clr-hover
+	span
+		width: 100%
+		height: 100%
+		align-self: center
+		cursor: pointer
+		&:hover
+			-webkit-text-stroke-color: transparent
+			-webkit-text-fill-color: $clr-hover
 
 #about
 	grid-row: 2/3
@@ -106,12 +109,13 @@ export default {
 	
 @media screen and (min-width: 720px)
 	#menu-container .menu-mobile
-		grid-auto-columns: 3.4rem
 		grid-template-rows: 1fr
+		grid-auto-columns: 3.4rem
 		grid-auto-rows: 0
+		text-align: start
 		padding: 0
-	.router-link
 		font-size: 3rem
+		line-height: 3.3rem // centers the text
 	#about
 		grid-column: 3/4
 	#work
@@ -126,10 +130,14 @@ export default {
 		writing-mode: vertical-rl
 		text-orientation: upright
 		letter-spacing: -10px
+		width: 100%
+	.router-link
+		display: inline-block
+		width: 100%
 		
 @media screen and (min-width: 1024px)
 	#menu-container .menu-mobile
 		grid-auto-columns: 4rem
-	.router-link
 		font-size: 3.6rem
+		line-height: 4rem
 </style>
