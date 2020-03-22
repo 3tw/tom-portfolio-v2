@@ -90,7 +90,7 @@ a,
 button,
 span
 	text-decoration: none
-	color: $clr-txt
+	color: $clr-btn
 	-webkit-tap-highlight-color: rgba(0,0,0,0)
 	-webkit-tap-highlight-color: transparent
 	-webkit-touch-callout: none

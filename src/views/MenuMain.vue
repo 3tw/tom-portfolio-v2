@@ -84,7 +84,6 @@ export default {
 	font: inherit
 	cursor: pointer
 	outline: inherit
-	color: black
 	text-decoration: none
 	text-transform: uppercase
 	font-family: $font-btn
