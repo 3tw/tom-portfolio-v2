@@ -18,20 +18,20 @@ const routes = [
 		children:[
 			{
 			path: "",
-			name: "Menu",
-			component: () => import(/* webpackChunkName: "about" */ "../views/Menu.vue"),
+			name: "MenuMain",
+			component: () => import(/* webpackChunkName: "about" */ "../views/MenuMain.vue"),
 			meta: { transitionType: 'fade' }
 			},
 			{
-				path: "/work",
-				name: "WorkLinks",
-				component: () => import(/* webpackChunkName: "about" */ "../views/WorkLinks.vue"),
+				path: "work",
+				name: "MenuWork",
+				component: () => import(/* webpackChunkName: "about" */ "../views/MenuWork.vue"),
 				meta: { transitionType: 'slide' }
 			},
 			{
-				path: "/exhibitions",
-				name: "ExhibitionsLinks",
-				component: () => import(/* webpackChunkName: "about" */ "../views/ExhibitionsLinks.vue"),
+				path: "exhibitions",
+				name: "MenuExhibitions",
+				component: () => import(/* webpackChunkName: "about" */ "../views/MenuExhibitions.vue"),
 				meta: { transitionType: 'slide' }
 			}
 		]	

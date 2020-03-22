@@ -1,12 +1,12 @@
 <template>
 	<div id="menu-container">
 		<div class="menu-mobile">
-			<router-link class="router-link" id="about" to="/about" v-show="showAbout">{{about}}</router-link>
-			<router-link class="router-link" id="work" to="/work" v-show="showWork">{{work}}</router-link>
+			<router-link class="router-link" id="about" :to="{ name: 'About' }" v-show="showAbout">{{about}}</router-link>
+			<router-link class="router-link" id="work" :to="{ name: 'MenuWork' }" v-show="showWork">{{work}}</router-link>
 			<router-link
 				class="router-link"
 				id="exhibitions"
-				to="/exhibitions"
+				:to="{ name: 'MenuExhibitons' }"
 				v-show="showExhibitions"
 			>{{exhibitions}}</router-link>
 		</div>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-	name: "Menu",
+	name: "MenuMain",
 	data() {
 		return {
 			exhibitions: "xhibit",

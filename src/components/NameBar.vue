@@ -1,15 +1,15 @@
 <template>
 	<div id="name-bar">
 		<div class="logo-name">
-			<span class="letter-1"><router-link class="router-link" to="/">T</router-link></span>
+			<span class="letter-1"><router-link class="router-link" :to="{ name: 'Home' }">T</router-link></span>
 			<span class="letter-2"><MenuTransition><div v-show="showLetter">o</div></MenuTransition></span>	
-			<span class="letter-3"><router-link class="router-link" to="/about">m</router-link></span>
-			<span class="letter-4"><router-link class="router-link" to="/work">w</router-link></span>
+			<span class="letter-3"><router-link class="router-link" :to="{ name: 'About' }">m</router-link></span>
+			<span class="letter-4"><router-link class="router-link" :to="{ name: 'MenuWork' }">w</router-link></span>
 			<span class="letter-5"><MenuTransition><div v-show="showLetter">i</div></MenuTransition></span>	
 			<span class="letter-6"><MenuTransition><div v-show="showLetter">n</div></MenuTransition></span>	
 			<span class="letter-7"><MenuTransition><div v-show="showLetter">k</div></MenuTransition></span>	
 			<span class="letter-8"><MenuTransition><div v-show="showLetter">l</div></MenuTransition></span>	
-			<span class="letter-9"><router-link class="router-link" to="/exhibitions">e</router-link></span>
+			<span class="letter-9"><router-link class="router-link" :to="{ name: 'MenuExhibitions' }">e</router-link></span>
 			<span class="letter-10"><MenuTransition><div v-show="showLetter">r</div></MenuTransition></span>	
 			
 		</div>
