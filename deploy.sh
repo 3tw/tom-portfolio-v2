@@ -20,7 +20,11 @@ git branch -m gh-pages
 # add remote repo
 git remote add origin https://github.com/3tw/TomPortfolio_Vue
 
-#git push -f git@github.com:<3tw>/<portfolio>.git master:gh-pages
-git push -f origin gh-pages
+# if you are deploying to https://<USERNAME>.github.io
+#git push -f git@github.com:<3tw>/<3tw>.github.io.git master
+
+# if you are deploying to https://<USERNAME>.github.io/<REPO>
+git push -f git@github.com:<3tw>/<TomPortfolio_Vue>.git master:gh-pages
+# git push -f origin gh-pages
 
 cd -
