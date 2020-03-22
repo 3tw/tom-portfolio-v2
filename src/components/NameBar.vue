@@ -1,15 +1,15 @@
 <template>
 	<div id="name-bar">
 		<div class="logo-name">
-			<span class="letter-1"><router-link class="router-link" id="home" to="/">T</router-link></span>
+			<span class="letter-1"><router-link class="router-link" to="/">T</router-link></span>
 			<span class="letter-2"><MenuTransition><div v-show="showLetter">o</div></MenuTransition></span>	
-			<span class="letter-3 btn-me">m</span>
-			<span class="letter-4 btn-work">w</span>
+			<span class="letter-3"><router-link class="router-link" to="/about">m</router-link></span>
+			<span class="letter-4"><router-link class="router-link" to="/work">w</router-link></span>
 			<span class="letter-5"><MenuTransition><div v-show="showLetter">i</div></MenuTransition></span>	
 			<span class="letter-6"><MenuTransition><div v-show="showLetter">n</div></MenuTransition></span>	
 			<span class="letter-7"><MenuTransition><div v-show="showLetter">k</div></MenuTransition></span>	
 			<span class="letter-8"><MenuTransition><div v-show="showLetter">l</div></MenuTransition></span>	
-			<span class="letter-9 btn-exhibitions">e</span>
+			<span class="letter-9"><router-link class="router-link" to="/exhibitions">e</router-link></span>
 			<span class="letter-10"><MenuTransition><div v-show="showLetter">r</div></MenuTransition></span>	
 			
 		</div>
@@ -62,6 +62,13 @@ export default {
 	span
 		height: 100%
 		cursor: default
+.letter-1,
+.letter-3,
+.letter-4,
+.letter-9
+	&:hover
+		-webkit-text-stroke-color: transparent
+		-webkit-text-fill-color: $clr-hover
 		
 @media screen and (min-width: 720px)
 	.logo-name
@@ -79,4 +86,10 @@ export default {
 	.letter-9,
 	.letter-10
 		grid-row: 1/2
+@media screen and (min-width: 1024px)
+	.logo-name
+		grid-auto-columns: 4.4rem
+		grid-template-rows: 4.4rem
+		font-size: 4rem
+		line-height: 4.6rem
 </style>

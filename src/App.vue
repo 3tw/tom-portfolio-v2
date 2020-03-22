@@ -140,4 +140,7 @@ button
 		font-size: 1.5rem
 		line-height: 2.2rem
 		padding: 1rem 0 0 2rem
+@media screen and (min-width: 1024px)
+	.main-wrap
+		grid-template-rows: 0.5rem 4.4rem 3rem 1fr
 </style>

@@ -15,7 +15,7 @@
 
 <script>
 export default {
-	name: "MenuMobile",
+	name: "Menu",
 	data() {
 		return {
 			exhibitions: "xhibit",
@@ -112,4 +112,10 @@ export default {
 		writing-mode: vertical-rl
 		text-orientation: upright
 		letter-spacing: -10px
+		
+@media screen and (min-width: 1024px)
+	#menu-container .menu-mobile
+		grid-auto-columns: 4.4rem
+	.router-link
+		font-size: 4rem
 </style>

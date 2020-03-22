@@ -35,8 +35,8 @@ const routes = [
 	},
 	{
 		path: "/menu",
-		name: "MenuMobile",
-		component: () => import(/* webpackChunkName: "about" */ "../views/MenuMobile.vue"),
+		name: "Menu",
+		component: () => import(/* webpackChunkName: "about" */ "../views/Menu.vue"),
 		meta: { transitionType: 'fade' }
 	}
 ];
