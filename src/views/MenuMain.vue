@@ -130,7 +130,7 @@ export default {
 		
 @media screen and (min-width: 1024px)
 	#menu-container .menu-mobile
-		grid-auto-columns: 4.4rem
+		grid-auto-columns: 4rem
 	.router-link
-		font-size: 4rem
+		font-size: 3.6rem
 </style>

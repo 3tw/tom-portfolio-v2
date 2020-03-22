@@ -90,8 +90,8 @@ export default {
 		grid-row: 1/2
 @media screen and (min-width: 1024px)
 	.logo-name
-		grid-template-rows: 4.4rem
-		grid-auto-columns: 4.4rem
-		font-size: 4rem
-		line-height: 4.6rem
+		grid-template-rows: 4rem
+		grid-auto-columns: 4rem
+		font-size: 3.6rem
+		line-height: 4.2rem
 </style>

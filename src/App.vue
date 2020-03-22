@@ -102,8 +102,8 @@ button
 	height: 100%
 	display: grid
 	grid-template-columns: 3rem 1fr 2rem
-	grid-template-rows: 0.5rem 3rem 3rem 1fr
-	grid-template-areas: ". . ." "side-bar menu-btn ." "side-bar main ." "side-bar main ."
+	grid-template-rows: 0.5rem 3rem 1fr
+	grid-template-areas: ". . ." "side-bar menu-btn ." "side-bar main ."
 
 .name
 	grid-area: side-bar
@@ -130,8 +130,8 @@ button
 	
 @media screen and (min-width: 720px)
 	#app .main-wrap
-		grid-template-areas: ". . ." ". side-bar menu-btn" ". main menu-btn" ". main ."
-		grid-template-rows: 0.5rem 3.4rem 3rem 1fr
+		grid-template-areas: ". . ." ". side-bar menu-btn" ". main ."
+		grid-template-rows: 0.5rem 3.4rem 1fr
 	#menu-btn
 		transform: rotate(-90deg)
 		padding-right: 1rem
@@ -146,7 +146,7 @@ button
 		padding: 1rem 0 0 2rem
 @media screen and (min-width: 1024px)
 	#app .main-wrap
-		grid-template-rows: 0.5rem 4.4rem 4.4rem 1fr
+		grid-template-rows: 0.5rem 4rem 1fr
 	#menu-btn
 		padding-right: 2rem
 </style>
