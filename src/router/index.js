@@ -13,31 +13,34 @@ const routes = [
 		meta: { transitionType: 'fade' }
 	},
 	{
+		path: "/menu",
+		component: () => import(/* webpackChunkName: "about" */ "../views/MenuEmptyRouterView.vue"),
+		children:[
+			{
+			path: "",
+			name: "Menu",
+			component: () => import(/* webpackChunkName: "about" */ "../views/Menu.vue"),
+			meta: { transitionType: 'fade' }
+			},
+			{
+				path: "/work",
+				name: "WorkLinks",
+				component: () => import(/* webpackChunkName: "about" */ "../views/WorkLinks.vue"),
+				meta: { transitionType: 'slide' }
+			},
+			{
+				path: "/exhibitions",
+				name: "ExhibitionsLinks",
+				component: () => import(/* webpackChunkName: "about" */ "../views/ExhibitionsLinks.vue"),
+				meta: { transitionType: 'slide' }
+			}
+		]	
+	},
+	{
 		path: "/about",
 		name: "About",
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
 		component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
 		meta: { transitionType: 'slide' }
-	},
-	{
-		path: "/work",
-		name: "WorkLinks",
-		component: () => import(/* webpackChunkName: "about" */ "../views/WorkLinks.vue"),
-		meta: { transitionType: 'slide' }
-	},
-	{
-		path: "/exhibitions",
-		name: "ExhibitionsLinks",
-		component: () => import(/* webpackChunkName: "about" */ "../views/ExhibitionsLinks.vue"),
-		meta: { transitionType: 'slide' }
-	},
-	{
-		path: "/menu",
-		name: "Menu",
-		component: () => import(/* webpackChunkName: "about" */ "../views/Menu.vue"),
-		meta: { transitionType: 'fade' }
 	}
 ];
 
@@ -45,5 +48,5 @@ const router = new VueRouter({
 	routes
 });
 
-router.replace({ path: '*', redirect: '/' }) //try replacing with manifest.json
+// router.replace({ path: '*', redirect: '/' }) //try replacing with manifest.json
 export default router;

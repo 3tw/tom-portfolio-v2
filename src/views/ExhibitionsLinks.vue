@@ -1,12 +1,12 @@
 <template>
 	<div class="exhibitions">
-			<router-link class="router-link" to="/">Heartefact festival 2019 | group exh</router-link>
+			<router-link class="router-link" to="/">Heartefact festival 2019 | group exhibition</router-link>
 	</div>
 </template>
 
 <script>
 export default {
-	name: "SxhibitionsLinks"
+	name: "ExhibitionsLinks"
 };
 </script>
 
