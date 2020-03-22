@@ -6,7 +6,7 @@
 			<router-link
 				class="router-link"
 				id="exhibitions"
-				:to="{ name: 'MenuExhibitons' }"
+				:to="{ name: 'MenuExhibitions' }"
 				v-show="showExhibitions"
 			>{{exhibitions}}</router-link>
 		</div>
@@ -18,9 +18,9 @@ export default {
 	name: "MenuMain",
 	data() {
 		return {
-			exhibitions: "xhibit",
 			work: "ork",
-			about: "e"
+			about: "e",
+			windowWidth: window.innerWidth
 		};
 	},
 	props: {
@@ -30,6 +30,13 @@ export default {
 		}
 	},
 	computed: {
+		exhibitions() {
+			if (this.windowWidth < 410) {
+				return "xhibit";
+			} else {
+				return "xhibitions";
+			}
+		},
 		showAbout() {
 			if (this.currentRoute == "About") {
 				return false;
@@ -51,7 +58,13 @@ export default {
 				return true;
 			}
 		}
-	}
+	},
+	mounted() {
+		window.addEventListener(
+			"resize",
+			() => (this.windowWidth = window.innerWidth)
+		);
+	},
 };
 </script>
 
@@ -74,7 +87,7 @@ export default {
 	color: black
 	text-decoration: none
 	text-transform: uppercase
-	font-family: 'Rubik Mono One', sans-serif
+	font-family: $font-btn
 	font-size: 2.6rem
 	line-height: 3.2rem
 	font-weight: 400
@@ -94,10 +107,12 @@ export default {
 	
 @media screen and (min-width: 720px)
 	#menu-container .menu-mobile
-		grid-auto-columns: 3rem
+		grid-auto-columns: 3.4rem
 		grid-template-rows: 1fr
 		grid-auto-rows: 0
 		padding: 0
+	.router-link
+		font-size: 3rem
 	#about
 		grid-column: 3/4
 	#work

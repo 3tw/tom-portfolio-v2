@@ -64,10 +64,8 @@ export default {
 
 <style lang="sass">
 // Google fonts
-@import url('https://fonts.googleapis.com/css?family=Lato:300,900&display=swap')
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300&display=swap')
 @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap')
-// url('https://fonts.googleapis.com/css?family=Work+Sans:400&display=swap')
 
 // Core CSS
 *
@@ -80,7 +78,7 @@ export default {
 html
 	font-size: 1em
 body
-	font-family: 'Source Sans pro', sans-serif
+	font-family: $font-main
 	line-height: 1.3rem
 	color: $clr-txt
 	min-width: 320px
@@ -117,20 +115,26 @@ button
 	
 // Views layout
 .about
+	font-family: $font-main
 	font-size: 1.3rem
 	line-height: 1.9rem
 	padding-left: 2rem
 .work,
 .exhibitions
+	font-family: $font-btn
 	font-size: 1.5rem
 	line-height: 1.9rem
+	font-weight: 400
+	color: $clr-txt
 	padding-left: 2rem
 	
 @media screen and (min-width: 720px)
 	#app .main-wrap
 		grid-template-areas: ". . ." ". side-bar menu-btn" ". main menu-btn" ". main ."
-	.main-wrap .menu-btn
+		grid-template-rows: 0.5rem 3.4rem 3rem 1fr
+	#menu-btn
 		transform: rotate(-90deg)
+		padding-right: 1rem
 	.about
 		font-size: 1.4rem
 		line-height: 2rem
@@ -141,6 +145,8 @@ button
 		line-height: 2.2rem
 		padding: 1rem 0 0 2rem
 @media screen and (min-width: 1024px)
-	.main-wrap
-		grid-template-rows: 0.5rem 4.4rem 3rem 1fr
+	#app .main-wrap
+		grid-template-rows: 0.5rem 4.4rem 4.4rem 1fr
+	#menu-btn
+		padding-right: 2rem
 </style>

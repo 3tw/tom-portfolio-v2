@@ -1,2 +1,3 @@
 # TomPortfolio_Vue
-Re-making vanilla JS project in Vue.js
+## WIP
+Re-making vanilla JS project in Vue.js with a new UI

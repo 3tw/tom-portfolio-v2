@@ -49,7 +49,7 @@ export default {
 	color: black
 	text-decoration: none
 	text-transform: uppercase
-	font-family: 'Rubik Mono One', sans-serif
+	font-family: $font-btn
 	font-size: 2.6rem
 	line-height: 3.2rem
 	font-weight: 400
@@ -72,9 +72,11 @@ export default {
 		
 @media screen and (min-width: 720px)
 	.logo-name
-		grid-template-rows: 3rem
-		grid-auto-columns: 3rem
+		grid-template-rows: 3.4rem
+		grid-auto-columns: 3.4rem
 		text-align: center
+		font-size: 3rem
+		line-height: 3.6rem
 	.letter-1,
 	.letter-2,
 	.letter-3,
@@ -88,8 +90,8 @@ export default {
 		grid-row: 1/2
 @media screen and (min-width: 1024px)
 	.logo-name
-		grid-auto-columns: 4.4rem
 		grid-template-rows: 4.4rem
+		grid-auto-columns: 4.4rem
 		font-size: 4rem
 		line-height: 4.6rem
 </style>

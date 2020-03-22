@@ -41,6 +41,10 @@ const routes = [
 		name: "About",
 		component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
 		meta: { transitionType: 'slide' }
+	},
+	{
+		path: "*",
+		redirect: { name: 'Home' }
 	}
 ];
 
@@ -48,5 +52,5 @@ const router = new VueRouter({
 	routes
 });
 
-// router.replace({ path: '*', redirect: '/' }) //try replacing with manifest.json
+router.replace({ path: '*', redirect: '/' }) //try finding an alternative
 export default router;
