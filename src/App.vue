@@ -104,6 +104,9 @@ span
 		border: none
 		outline: none
 		
+.router-link-exact-active
+	-webkit-text-fill-color: $clr-hover
+	
 // Main layout	
 #app
 	height: 100%

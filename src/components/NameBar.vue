@@ -62,6 +62,9 @@ export default {
 	span
 		height: 100%
 		cursor: default
+.letter-1 .router-link
+	-webkit-text-fill-color: transparent
+	
 .letter-1,
 .letter-3,
 .letter-4,
