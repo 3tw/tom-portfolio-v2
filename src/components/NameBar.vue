@@ -64,6 +64,7 @@ export default {
 		cursor: default
 .letter-1 .router-link
 	-webkit-text-fill-color: transparent
+	-webkit-text-stroke-color: $clr-btn
 	
 .letter-1,
 .letter-3,

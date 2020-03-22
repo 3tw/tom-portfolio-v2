@@ -105,6 +105,7 @@ span
 		outline: none
 		
 .router-link-exact-active
+	-webkit-text-stroke-color: transparent
 	-webkit-text-fill-color: $clr-hover
 	
 // Main layout	
